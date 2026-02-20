@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "hianime-drp",
+  "version": "0.0.2",
+  "description": "a peculiar extension",
+  "homepage_url": "https://github.com/modlessflash/hianime-drp",
+  "content_scripts": [
+    {
+      "matches": ["https://hianime.to/watch/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{8831bb1b-3ee8-4a51-a0eb-76f44ac6ceb5}",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}
