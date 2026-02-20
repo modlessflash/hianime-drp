@@ -1,4 +1,6 @@
 # hianime discord rich presence
+<img width="446" height="181" alt="Discord_fJ7io8vJc4" src="https://github.com/user-attachments/assets/b6bffdd2-6ed6-4367-b7cc-66fb17373cee" />
+
 this readme is pretty much for myself
 
 ---
