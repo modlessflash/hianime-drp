@@ -23,14 +23,22 @@ int main(){
   svr.Get("/hianimedrp",
     [&](const auto& req, auto& res)
     {
+      res.set_header("Access-Control-Allow-Origin", "*");
+      res.set_header("Access-Control-Allow-Headers", "*");
+      res.set_header("Access-Control-Allow-Methods", "*");
       res.status = 200;
-      if (req.has_param("info"))
+      if (req.has_param("title") && req.has_param("episode"))
       {
         auto time = std::chrono::system_clock::now();
         DiscordRichPresence pr;
         memset(&pr, 0, sizeof(pr));
-        pr.state = "";
-        pr.details = req.get_param_value("info").c_str();
+
+        std::string title   = req.get_param_value("title");
+        std::string episode = req.get_param_value("episode");
+
+        pr.details          = title.c_str();
+        pr.state            = episode.c_str();
+
         pr.startTimestamp = std::chrono::duration_cast<std::chrono::milliseconds>(time.time_since_epoch()).count();
         pr.largeImageKey = "logo";
         pr.largeImageText = "hianime-drp";
@@ -39,7 +47,7 @@ int main(){
     }
   );
 
-  svr.listen("localhost", 9293);
+  svr.listen("127.0.0.1", 9293);
   Discord_Shutdown();
   return 0;
 }

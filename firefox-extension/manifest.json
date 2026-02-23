@@ -1,9 +1,13 @@
 {
   "manifest_version": 3,
   "name": "hianime-drp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a peculiar extension",
   "homepage_url": "https://github.com/modlessflash/hianime-drp",
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
   "content_scripts": [
     {
       "matches": ["https://hianime.to/watch/*"],

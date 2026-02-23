@@ -21,8 +21,8 @@ function waitForElm(selector) { // https://stackoverflow.com/questions/5525071/h
 function once() {
   const title   = document.getElementsByClassName("text-white dynamic-name")[0].text;
   const episode = document.getElementsByClassName("server-notice")[0].children[0].children[0].textContent;
-  const info    = `${title} :: ${episode}`
-  fetch(`http://localhost:9293/hianimedrp?info=${encodeURIComponent(info)}`);
+  
+  fetch(`http://localhost:9293/hianimedrp?title=${encodeURIComponent(title)}&episode=${encodeURIComponent(episode)}`);
 }
 
 function start() {
